@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:14
-    container_name: my-postgres
+    container_name: hemocione-promotions-postgres
     environment:
       POSTGRES_DB: promotions
       POSTGRES_USER: postgres
