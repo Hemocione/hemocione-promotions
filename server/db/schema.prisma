@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Add promotions here
+model partner {
+  id                    String      @id @default(cuid())
+  lead_resposible_name  String
+  lead_resposible_email String
+  company_name          String
+  company_website       String?
+  promotions            promotion[]
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+}
+
+model promotion {
+  id                 String   @id @default(cuid())
+  title              String
+  starts_at          DateTime
+  ends_at            DateTime
+  active             Boolean  @default(true)
+  is_fixed_code      Boolean  @default(true)
+  fixed_code         String?
+  code_url_generator String?
+  partner            partner? @relation(fields: [partnerId], references: [id])
+  partnerId          String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
