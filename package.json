@@ -18,6 +18,7 @@
     "schema": "server/db/schema.prisma"
   },
   "dependencies": {
-    "@prisma/client": "^6.5.0"
+    "@prisma/client": "^6.5.0",
+    "@types/node": "^22.13.10"
   }
 }
