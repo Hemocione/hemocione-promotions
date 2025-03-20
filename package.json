@@ -2,6 +2,10 @@
   "private": true,
   "scripts": {
     "build": "nitro build",
+    "prisma:migrate:generate": "npx prisma generate",
+    "prisma:migrate:dev": "npx prisma migrate dev",
+    "prisma:migrate:studio": "npx prisma studio",
+    "prisma:migrate:reset": "npx prisma migrate reset",
     "dev": "nitro dev",
     "prepare": "nitro prepare",
     "preview": "node .output/server/index.mjs"
