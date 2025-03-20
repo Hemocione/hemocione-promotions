@@ -11,6 +11,13 @@
     "preview": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "nitropack": "latest"
+    "nitropack": "latest",
+    "prisma": "^6.5.0"
+  },
+  "prisma": {
+    "schema": "server/db/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0"
   }
 }
