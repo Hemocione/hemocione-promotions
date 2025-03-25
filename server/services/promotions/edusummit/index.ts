@@ -5,7 +5,7 @@ import { z } from "zod"
 const payloadSchema = z.object({
   name: z.string(),
   email: z.string(),
-  hemocioneId: z.number(),
+  hemocioneId: z.string(),
 })
 
 export const webhookHandler = async (payload: Payload) => {
