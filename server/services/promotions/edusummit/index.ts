@@ -20,6 +20,7 @@ const payloadSchema = z.object({
 })
 
 export const webhookHandler = async (payload: Payload) => {
+  const { hemocioneId } = payload
   const coupon = 'fixedCode'
 
   const templateName = 'edusummit_cupom_2025'
@@ -31,7 +32,7 @@ export const webhookHandler = async (payload: Payload) => {
         {
           "type": "text",
           "parameter_name": "coupon",
-          "text": "Pi"
+          "text": coupon
         }
       ]
     },
@@ -51,5 +52,5 @@ export const webhookHandler = async (payload: Payload) => {
   // validate payload
   payloadSchema.parse(payload)
 
-  sendWppMsg({ templateName, templateComponents, coupon });
+  sendWppMsg({ templateName, templateComponents, hemocioneId });
 };
