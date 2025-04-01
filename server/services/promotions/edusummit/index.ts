@@ -2,6 +2,8 @@ import { sendWppMsg } from "~/services/hemocione-id/service";
 import { Payload } from "./interface";
 import { z } from "zod"
 
+const config = useRuntimeConfig()
+
 const payloadSchema = z.object({
   templateComponents: z.array(
     z.object({
@@ -21,7 +23,6 @@ const payloadSchema = z.object({
 
 export const webhookHandler = async (payload: Payload) => {
   const { hemocioneId } = payload
-  const coupon = 'HEMO25EDU'
 
   const templateName = 'edusummit_cupom_2025'
 
@@ -32,7 +33,7 @@ export const webhookHandler = async (payload: Payload) => {
         {
           "type": "text",
           "parameter_name": "coupon",
-          "text": coupon
+          "text": config.eduSummit.coupon
         }
       ]
     },
@@ -43,7 +44,7 @@ export const webhookHandler = async (payload: Payload) => {
       "parameters": [
         {
           "type": "text",
-          "text": "https://hemocione.com.br/"
+          "text": config.eduSummit.url
         }
       ]
     }
