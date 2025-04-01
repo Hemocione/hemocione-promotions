@@ -3,8 +3,8 @@ export async function sendWppMsg(payload: any) {
   $fetch(`${config.public.hemocioneIdApiUrl}/send-wpp-msg`, {
     method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'x-secret': 'secret'
+      "Content-Type": "application/json",
+      "x-secret": config.hemocioneIdApiSecret,
     },
     body: JSON.stringify(payload),
   });
