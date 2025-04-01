@@ -7,6 +7,7 @@ export default defineNitroConfig({
       hemocioneIdApiUrl:
         process.env.HEMOCIONE_ID_API_URL ??
         "http://localhost:8080",
-    }
+    },
+    secret: process.env.API_SECRET ?? "secret"
   }
 });
