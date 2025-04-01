@@ -6,7 +6,7 @@ export default defineNitroConfig({
     public: {
       hemocioneIdApiUrl:
         process.env.HEMOCIONE_ID_API_URL ??
-        "https://hemocione-id-dev.cpt.hemocione.com.br",
+        "http://localhost:8080",
     }
   }
 });
