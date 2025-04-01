@@ -3,8 +3,7 @@ import { defineEventHandler, createError, getRequestHeader } from 'h3'
 export default defineEventHandler(async (event) => {
   try {
     const config = useRuntimeConfig()
-    const secret = getRequestHeader(event, 'x-secret')
-
+    const secret = getQuery(event)["x-secret"]
     if (!secret || secret !== config.secret) {
       return sendError(event, createError({
         statusCode: 401,
