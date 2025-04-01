@@ -2,8 +2,6 @@ import { sendWppMsg } from "~/services/hemocione-id/service";
 import { Payload } from "./interface";
 import { z } from "zod"
 
-const config = useRuntimeConfig()
-
 const payloadSchema = z.object({
   templateComponents: z.array(
     z.object({
@@ -22,6 +20,7 @@ const payloadSchema = z.object({
 })
 
 export const webhookHandler = async (payload: Payload) => {
+  const config = useRuntimeConfig()
   const { hemocioneId } = payload
 
   const templateName = 'edusummit_cupom_2025'

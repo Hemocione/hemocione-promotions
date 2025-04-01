@@ -1,7 +1,5 @@
-const config = useRuntimeConfig();
-
-
 export async function sendWppMsg(payload: any) {
+  const config = useRuntimeConfig();
   $fetch(`${config.public.hemocioneIdApiUrl}/send-wpp-msg`, {
     method: "POST",
     headers: {
