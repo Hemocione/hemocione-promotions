@@ -21,7 +21,7 @@ const payloadSchema = z.object({
 
 export const webhookHandler = async (payload: Payload) => {
   const { hemocioneId } = payload
-  const coupon = 'fixedCode'
+  const coupon = 'HEMO25EDU'
 
   const templateName = 'edusummit_cupom_2025'
 
