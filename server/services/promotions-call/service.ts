@@ -9,6 +9,7 @@ export const runWithinCall = async (
     await fn(payload);
     call.status = "success";
   } catch (e) {
+    console.error("Error in runWithinCall", e);
     call.status = "error";
     call.error = e;
   }
