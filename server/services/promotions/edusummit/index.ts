@@ -49,8 +49,10 @@ export const webhookHandler = async (payload: Payload) => {
     }
   ]
 
-  // validate payload
-  payloadSchema.parse(payload)
+  const payloadToSend = { templateName, templateComponents, hemocioneId }
 
-  sendWppMsg({ templateName, templateComponents, hemocioneId });
+  // validate payload
+  payloadSchema.parse(payloadToSend)
+
+  sendWppMsg(payloadToSend);
 };
