@@ -21,7 +21,18 @@ export const webhookHandler = async (payload: unknown) => {
         },
       ],
     },
-  ];
+    {
+      type: "button",
+      sub_type: "url",
+      index: "0",
+      parameters: [
+        {
+          type: "text",
+          text: "https://lets.4.events/edu%3Esummit-C24737E1"
+        }
+      ]
+    }
+  ]
 
   const wppPayload = { templateName, templateComponents, hemocioneId };
   sendWppMsg(wppPayload);
