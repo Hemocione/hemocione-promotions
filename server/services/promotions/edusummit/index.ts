@@ -12,6 +12,17 @@ export const webhookHandler = async (payload: unknown) => {
   const templateName = "edusummit_cupom_2025";
   const templateComponents = [
     {
+      type: "header",
+      parameters: [
+        {
+          type: "image",
+          image: {
+            link: config.eduSummit.image,
+          },
+        },
+      ],
+    },
+    {
       type: "body",
       parameters: [
         {
