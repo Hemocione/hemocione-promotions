@@ -24,5 +24,5 @@ export const webhookHandler = async (payload: unknown) => {
   ];
 
   const wppPayload = { templateName, templateComponents, hemocioneId };
-  sendWppMsg(wppPayload);
+  await sendWppMsg(wppPayload);
 };
