@@ -13,6 +13,9 @@ export default defineNitroConfig({
     eduSummit: {
       coupon: process.env.EDUSUMMIT_COUPON_CODE ?? "T3ST3",
       url: process.env.EDUSUMMIT_URL ?? "https://www.example.com",
+      image:
+        process.env.EDUSUMMIT_IMAGE ??
+        "https://cdn.hemocione.com.br/events/prod/uploads/private/1747765373818-edusummit.png",
     },
   },
 });
